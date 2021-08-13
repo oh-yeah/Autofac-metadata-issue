@@ -34,7 +34,7 @@ namespace MetaResolutionIssue
             }
 
             // issue
-            using (var scope = container.BeginLifetimeScope("child-without-configurationAction", b => {}))
+            using (var scope = container.BeginLifetimeScope("child-with-configurationAction", b => {}))
             {
                 // DUPLICATE DEPENDICIES RESOLVED HERE!!!!!!!!
                 var deps = scope.Resolve<IEnumerable<Lazy<IDependency, IMeta>>>();
